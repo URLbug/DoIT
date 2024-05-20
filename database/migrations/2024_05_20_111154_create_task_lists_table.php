@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('task_lists', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->longText('description');
             $table->date('deadline');
             $table->string('lvl');
             $table->unsignedBigInteger('userId');

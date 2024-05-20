@@ -16,13 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('App\\Http\\Controllers')->group(function() {
     Route::middleware('auth')->group(function() {
-        Route::get('/', function () {
-            return view('index');
-        })->name('home');
+        Route::get('/', 'Task\\TaskListController@index')->name('home');
+        Route::get('/{id}/{name}', 'Task\\TaskListController@detail_index')->name('detail');
+        Route::post('/', 'Task\\TaskListController@exit');
 
-        Route::get('/create', function () {
-            return view('task.create');
-        })->name('create');
+        Route::get('/{id}/{name}/redact', 'Task\\RedactController@index')->name('redact');
+        Route::post('/{id}/{name}/redact', 'Task\\RedactController@update');
+
+        Route::get('/{id}/{name}/deleat', 'Task\\RedactController@indexDeleat')->name('redact');
+        Route::post('/{id}/{name}/deleat', 'Task\\RedactController@deleat');
+
+
+        Route::get('/create', 'Task\\CreateController@index')->name('create');
+        Route::post('/create', 'Task\\CreateController@create');
     });
 
     // Regist

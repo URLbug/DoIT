@@ -37,6 +37,7 @@ header {
 
 .task-list {
     margin: 20px;
+    overflow-y: scroll;
 }
 
 .task-list ul {

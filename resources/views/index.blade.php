@@ -5,28 +5,38 @@
         <h1>Задачи</h1>
         <section class="exit">
             <h2>Выйти из аккаунта</h2>
-            <button>Выйти</button>
+            <form action="{{route('home')}}", method="POST">
+                @csrf
+                <button>Выйти</button>
+            </form>
         </section>
     </header>
     <main>
         <section class="create-task">
             <h2>Создать задачу</h2>
-            <a class="a-buttons" href="">Создать</a>
+            <a class="a-buttons" href="{{ route('create') }}">Создать</a>
         </section>
 
         <section class="task-list">
             <h2>Список задач</h2>
             <ul>
-                <li class="gray">
-                    <a href="#" class="detail-task">Задача 1</a>
-                    <a href="" class="a-buttons">Редактировать</a>
-                    <a href="" class="a-buttons">Удалить</a>
-                </li>
-                <li>
-                    <a href="#" class="detail-task">Задача 2</a>
-                    <a href="" class="a-buttons">Редактировать</a>
-                    <a href="" class="a-buttons">Удалить</a>
-                </li>
+                @for($item=0; $item < count($tasklist); $item++)
+                    @if($item % 2 === 0)
+                        <li class="gray">
+                    @else
+                        <li>
+                    @endif
+                        <a href="{{$tasklist[$item]->id . '/' . $tasklist[$item]->name}}" class="detail-task">
+                            {{ $tasklist[$item]->name }}
+                        </a>
+                        <a href="{{$tasklist[$item]->id . '/' . $tasklist[$item]->name}}/redact" class="a-buttons">
+                            Редактировать
+                        </a>
+                        <a href="{{$tasklist[$item]->id . '/' . $tasklist[$item]->name}}/deleat" class="a-buttons">
+                            Удалить
+                        </a>
+                    </li>
+                @endfor
                 <!-- добавить больше задач -->
             </ul>
         </section>    
