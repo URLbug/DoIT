@@ -11,21 +11,21 @@
     <main>
         <section class="create-task">
             <h2>Создать задачу</h2>
-            <button>Создать</button>
+            <a class="a-buttons" href="">Создать</a>
         </section>
 
         <section class="task-list">
             <h2>Список задач</h2>
             <ul>
-                <li>
-                    <span>Задача 1</span>
-                    <button>Редактировать</button>
-                    <button>Удалить</button>
+                <li class="gray">
+                    <a href="#" class="detail-task">Задача 1</a>
+                    <a href="" class="a-buttons">Редактировать</a>
+                    <a href="" class="a-buttons">Удалить</a>
                 </li>
                 <li>
-                    <span>Задача 2</span>
-                    <button>Редактировать</button>
-                    <button>Удалить</button>
+                    <a href="#" class="detail-task">Задача 2</a>
+                    <a href="" class="a-buttons">Редактировать</a>
+                    <a href="" class="a-buttons">Удалить</a>
                 </li>
                 <!-- добавить больше задач -->
             </ul>

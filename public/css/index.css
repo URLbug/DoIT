@@ -24,6 +24,15 @@ header {
         font-size: 16px;
         cursor: pointer;
     }
+
+    .exit button:hover {
+        background-color: #3e8e41;
+    }
+}
+
+.detail-task {
+    text-decoration: none;
+    color: #3c6b3d;
 }
 
 .task-list {
@@ -41,11 +50,16 @@ header {
     border-bottom: 1px solid #ccc;
 }
 
+.gray {
+    background-color: rgb(206, 206, 206);
+}
+
 .task-list li:last-child {
     border-bottom: none;
 }
 
-.task-list button {
+.a-buttons {
+    text-decoration: none;
     background-color: #4CAF50;
     color: #fff;
     border: none;
@@ -54,7 +68,7 @@ header {
     cursor: pointer;
 }
 
-.task-list button:hover {
+.a-buttons:hover {
     background-color: #3e8e41;
 }
 
@@ -85,4 +99,8 @@ header {
 
 .create-task button:hover {
     background-color: #3e8e41;
+}
+
+.detail-task:hover {
+    color: #172b17;
 }

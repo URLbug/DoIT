@@ -19,6 +19,10 @@ Route::namespace('App\\Http\\Controllers')->group(function() {
         Route::get('/', function () {
             return view('index');
         })->name('home');
+
+        Route::get('/create', function () {
+            return view('task.create');
+        })->name('create');
     });
 
     // Regist
