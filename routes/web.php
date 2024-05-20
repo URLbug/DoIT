@@ -15,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::namespace('App\\Http\\Controllers')->group(function() {
-    Route::middleware('auth')->get('/', function () {
-        auth()->logout();
-        return view('welcome');
-    })->name('home');
+    Route::middleware('auth')->group(function() {
+        Route::get('/', function () {
+            return view('index');
+        })->name('home');
+    });
 
     // Regist
     Route::middleware([IsAuth::class])->get('/regist', 'LoginController@indexRegist')->name('regist');

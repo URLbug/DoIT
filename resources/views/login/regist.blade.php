@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Login Form | CodingLab</title> 
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-  </head>
-  <body>
+@extends('app')
+
+@section('content')
     <div class="container">
       <div class="wrapper">
         <div class="title"><span>Регестрация</span></div>
@@ -41,7 +33,4 @@
         </form>
       </div>
     </div>
-
-  </body>
-
-</html>
+@endsection
