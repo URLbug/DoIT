@@ -14,6 +14,11 @@ class RedactController extends Controller
     {
         $task = TaskList::query()->where('id', $id)->first();
 
+        if(!isset($task))
+        {
+            abort(404);
+        }
+
         return view('task.redact', [
             'task' => $task,
         ]);
@@ -21,6 +26,13 @@ class RedactController extends Controller
 
     function indexDeleat(int $id, string $name): View
     {
+        $task = TaskList::query()->where('id', $id)->first();
+        
+        if(!isset($task))
+        {
+            abort(404);
+        }
+
         return view('task.deleat', [
             'id' => $id,
             'name' => $name,

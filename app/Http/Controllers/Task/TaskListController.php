@@ -31,6 +31,11 @@ class TaskListController extends Controller
     {
         $task = TaskList::query()->where('id', $id)->first();
 
+        if(!isset($task))
+        {
+            abort(404);
+        }
+
         return view('task.detail', [
             'task' => $task,
         ]);
